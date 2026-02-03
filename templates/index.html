@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English to Kannada Translator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1><i class="fas fa-globe"></i> English to Kannada Translator</h1>
+                <p class="subtitle">Translate and hear Kannada pronunciations</p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Input Section -->
+            <div class="card input-card">
+                <div class="card-header">
+                    <h2><i class="fas fa-keyboard"></i> English Text</h2>
+                    <span class="char-count">0/500</span>
+                </div>
+                <textarea 
+                    id="englishText" 
+                    class="input-text" 
+                    placeholder="Enter English text here..."
+                    maxlength="500"></textarea>
+                <div class="button-group">
+                    <button id="translateBtn" class="btn btn-primary">
+                        <i class="fas fa-exchange-alt"></i> Translate
+                    </button>
+                    <button id="clearBtn" class="btn btn-secondary">
+                        <i class="fas fa-redo"></i> Clear
+                    </button>
+                </div>
+            </div>
+
+            <!-- Output Section -->
+            <div class="card output-card" id="outputCard" style="display: none;">
+                <div class="card-header">
+                    <h2><i class="fas fa-language"></i> Kannada Translation</h2>
+                </div>
+                
+                <div class="output-text-wrapper">
+                    <p id="kannadaText" class="output-text"></p>
+                </div>
+                
+                <div class="button-group">
+                    <button id="speakBtn" class="btn btn-success">
+                        <i class="fas fa-volume-up"></i> Speak
+                    </button>
+                    <button id="copyBtn" class="btn btn-info">
+                        <i class="fas fa-copy"></i> Copy
+                    </button>
+                </div>
+            </div>
+
+            <!-- Error Message -->
+            <div id="errorMessage" class="error-message" style="display: none;"></div>
+
+            <!-- Success Message -->
+            <div id="successMessage" class="success-message" style="display: none;"></div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2026 English to Kannada Translator | Powered by Python & Flask</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
